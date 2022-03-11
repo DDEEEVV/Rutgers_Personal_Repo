@@ -2,9 +2,6 @@
 
 ## Overview and Origin
 
-### Third Tittle
-#### Smaller Tittle
-
 * Name of company
 
 * When was the company incorporated?
