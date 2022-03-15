@@ -21,7 +21,7 @@
 
 >The returning customers in a postpandemic world started using the public transportation again and finaly MTA was able to generade data about the traffic of public transportation use, a sector that was hit hard by the pandemic. In May 2021 MTA realesed the information that the NYC subway and buss rides reached a pandemic record high rideship of 2,239,500 contactless transactions in one single day. As of today speaking there are 472 subway stations and 5,800 MTA busses that offer the OMNY contactless payment to use the public transportation in NYC.
 
-* Which technologies are they currently using, and how are they implementing them? (This may take a little bit of sleuthing–– you may want to search the company’s engineering blog or use sites like Stackshare to find this information.)
+>The technology applied to complete this project was already invented and was used by many companies. It first started with stores to prevent theft and than banks who created credid cards and reader devices, that have a chip into it with radio-frequency identification (RFID) which uses electromagnetic fields to automatically identify and track tags attached to objects. The RFID system has three main elements that can not run without *a tiny radio transponder*, *a radio receiver* and *transmitter*. The process starts when an electromagnetic interrogation pulse is triggered from a nearby RFID reader device, the tag transmits digital data known as identifying invetory number, back to the reader. This number is used to track inventory goods. In this case this numer will trach the free transfer in the subways system for 2 hours. Passive tags are powered by energy from the RFID reader's interrogating **radio waves**. RFID is one method of **automatic identification and data capture (AIDC)**
 
 
 ## *Landscape*
@@ -29,29 +29,42 @@
 >One of the largest domains of FinTech in terms of interest from investors is payments. Payment is about payment services including payment back-end infrastracture, card issuing, merchant acquiring, mobile payment, seamless solutions and point of sales solution. OMNY is in the domain of payments that can be considered as a payment, back-end and infrastructure. 
 This subdomain of payments can broadly refers to payment processing providers, solutions for accepting electronic payments, point of sale terminals, and card providers and also mobile payments. 
 
->The last 20 years have shapen the world when it comes to how we pay for goods and serices. It started with PayPal and WorldPay that kicked off the first wave of FinTech, making it easier for buyers and sellers to do business together in internet and in person. This last decade has proven that we have been using the digital payment services in almost 90% of our daily transactions thanx to RFID (radio-frequency identification) and mobile apps, the industry is projected to be worth $2 trillion by 2025.
-
-* What are the other major companies in this domain?
+>*The Payment domain of FinTech*
+>
+>The last 20 years have shapen the world when it comes to how we pay for goods and serices. It started with PayPal and WorldPay that kicked off the first wave of FinTech, making it easier for buyers and sellers to do business together on internet and in person. This last decade has proven that we have been using the digital payment services in almost 90% of our daily transactions thanx to RFID (radio-frequency identification) and mobile apps, the industry is projected to be worth $2 trillion by 2025.
 
 
 ## *Results*
 
-* What has been the business impact of this company so far?
+>The OMNY system has transformed the industry completely, it is very modern and very convinient, plus it helps the planet by reducing the plastic waste of metrocards. The MTA has said that more people take the subways now because it is easier to pay. On the other side the MTA has improved the subway stations by installing other technologies like touch screens to check trains departure and arrivals, also usb charging stations for phones and other devices to make the subways system more attractive for riders.   
 
-* What are some of the core metrics that companies in this domain use to measure success? How is your company performing, based on these metrics?
+>MTA sees an increase of riders using the system and that automatically generates more income which is a very important metric of success. The MTA Police also has reported that less people are commiting turn-style jumping (not paying the fare) because now the payment method is so robust that people can just touch their devices instead of waiting to refill the MetroCard or in case of MetroCard's Vending Machine running out of power or not working at all *(which has been an issues for many years)*.
 
-* How is your company performing relative to competitors in the same domain?
+>In New York City the Metropolitan Transportation Authority (MTA) has a contract with Cubic Transportation System to develop and maintain the OMNY system, it is the only company that offers the service for contactless payment in the public transportation system in New York City. Compared to other industries the use of the contactless system has been increasing and now almost every store offers is.
 
 
 ## *Recommendations*
 
-* If you were to advise the company, what products or services would you suggest they offer? (This could be something that a competitor offers, or use your imagination!)
+>>When I moved to New York City a few years ago I fell in love with it right away, it is the energy and the potential that this city generates. I found it facinating how everything was connected and worked as whole. Now, I live in New York and I work in Jersey City and I commute to work by train, but I have to switch between the NY Subway system and the New Jersey Path. I have been so disappointed when I figured it out that OMNY doesn't really works there, and not only that but doesn't recognize the transfer. I would highly recommend for them to apply that and figure it out because like me are a lot of riders that use both subway systems and a colaboration would make it work a whole.
 
-* Why do you think that offering this product or service would benefit the company?
+>>I would highly also recommend for OMNY is to build a card that works just like credit cards where you can transfer money or have monthly unlimited rides that will be cheapper for heavy commuters and also offer plans for senior citizens and people with diasbilities.
 
-* What technologies would this additional product or service utilize?
+>>To make this happen MTA will need to build a user friendly website where people can refill their cards and use it to commute and this way that will prevent exposure of credit card in their daily activities.
 
-* Why are these technologies appropriate for your solution?
+>>It really helps the users and removes the need for a machine in the subways station where people wait in lines and most of the times they are not working or not easy to use for turists and senior citizens.
+
+<details>
+<summary>REFERENCES</summary>
+
+>[Radio-frequency identification technology information](https://en.wikipedia.org/wiki/Radio-frequency_identification#Readers)
+
+>[Ten Years Of Fintech Megatrends For The Next Decade](https://www.forbes.com/sites/lawrencewintermeyer/2019/12/26/ten-years-of-fintech-megatrends-for-the-next-decade/?sh=21cdbf0b18aa)
+
+>[Everything you need to know about OMNY, the new MTA payment method](https://gothamist.com/news/mta-omny-explainer-subway-bus-payment-nyc)
+
+>[Cubic Corporation](https://en.wikipedia.org/wiki/Cubic_Corporation#Cubic_Transportation_Systems)
+</details>
+
 <details>
 <summary>OMNY Mascot</summary>
 
