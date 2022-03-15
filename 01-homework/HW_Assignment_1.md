@@ -52,5 +52,9 @@ This subdomain of payments can broadly refers to payment processing providers, s
 * What technologies would this additional product or service utilize?
 
 * Why are these technologies appropriate for your solution?
+<details>
+<summary>OMNY Mascot</summary>
 
 ![alt txt if image is missing(image containing the OMNY Mascot)](../01-homework/Assets/OMNY%20mascot.png)
+
+</details>
