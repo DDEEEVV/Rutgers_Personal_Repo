@@ -26,7 +26,7 @@ miles = 48
 kilometers = miles / 0.621371
 
 # Substituting/formatting variable
-message = f"The total kilometers driven was: {kilometers}"
+message = f"The total kilometers driven was: {round(kilometers,2)}"
 print(message)
 
 # Variable naming conventions
@@ -34,3 +34,7 @@ print(message)
 mpg = 24
 # Better Example
 miles_per_gallon = 24
+
+kilometers_per_gallon = miles_per_gallon / 0.621371
+message1 = f"The total kilometers driven per gallon was: {round(kilometers_per_gallon,2)}"
+print(message1)
