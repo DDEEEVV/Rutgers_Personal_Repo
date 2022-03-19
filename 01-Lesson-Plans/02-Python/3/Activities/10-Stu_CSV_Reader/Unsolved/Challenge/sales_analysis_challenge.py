@@ -7,11 +7,11 @@ row of the file to calculate customer sales averages.
 """
 
 # @TODO: Import the pathlib and csv library
-
-
+from pathlib import Path
+import csv
 
 # @TODO: Set the file path
-
+sales_csvpath = Path("Rutgers_Personal_Repo/01-Lesson-Plans/02-Python/3/Activities/10-Stu_CSV_Reader/Resources/sales.csv")
 
 # @TODO: Initialize dictionary
 
