@@ -6,12 +6,10 @@ undertake based on max NPV values.
 """
 
 # @TODO: Import the NumPy Financial (numpy_financial) library
-import numpy
-import numpy_financial as npf
+
 
 # Discount Rate
 discount_rate = .1
-interest_rate = discount_rate
 
 # Initial Investment, Cash Flow 1, Cash Flow 2, Cash Flow 3, Cash Flow 4
 cash_flows_conservative = [-1000, 400, 400, 400, 400]
@@ -22,12 +20,9 @@ cash_flows_aggressive = [-2250, 800, 800, 800, 800]
 npv_dict = {}
 
 # @TODO: Calculate the NPV for each scenario
-net_present_value_1 = npf.npv(interest_rate, cash_flows_conservative)
-print(f"NPV_1 = {round(net_present_value_1, 2)}")
-net_present_value_2 = npf.npv(interest_rate, cash_flows_neutral)
-print(f"NPV_2 = {round(net_present_value_2, 2)}")
-net_present_value_3 = npf.npv(interest_rate, cash_flows_aggressive)
-print(f"NPV_3 = {round(net_present_value_3, 2)}")
+
+
+
 
 # @TODO: Initialize variables
 

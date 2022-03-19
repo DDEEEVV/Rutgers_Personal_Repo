@@ -61,6 +61,9 @@ for x in range(5):
   }
 
 # Traverse/access nested objects
+for k,v in trading_pnl.items():
+  print(f"key is {k}, value is {v}")
+
 # List of Dicts
 ceo_nested_dict = [
   {
