@@ -7,6 +7,10 @@ business tier (determined by revenue).
 """
 
 # List of dicts
+from gevent import Greenlet
+from sympy import GreaterThan, re
+
+
 customers = [
     { "first_name": "Tom", "last_name": "Bell", "revenue": 0 },
     { "first_name": "Maggie", "last_name": "Johnson", "revenue": 1032 },
@@ -24,9 +28,22 @@ customers = [
 #   Bronze = 0-1000
 def create_greeting(first_name, last_name, revenue):
     # @TODO: YOUR CODE HERE!
-    greeting = ""
+    greeting = "" # empty
+
+    if (revenue > 3000):
+        greeting = f"Hi {first_name} {last_name}! Thank you for doing business of ${revenue}! You are a Platinum Member!"
+    elif (revenue > 2000 and revenue <= 3000):
+        greeting = f"Hi {first_name} {last_name}! Thank you for doing business of ${revenue}! You are a Gold Member!"
+    elif (revenue > 1000 and revenue <= 2000):
+        greeting = f"Hi {first_name} {last_name}! Thank you for doing business of ${revenue}! You are a Silver Member!"
+    elif (revenue > 0 and revenue <= 1000):
+        greeting = f"Hi {first_name} {last_name}! Thank you for doing business of ${revenue}! You are a Bronze Member!"
+
     return greeting
 
 # @TODO: Loop through the list of customers and use your function to print
 # custom greetings for each customer.
 # @TODO: YOUR CODE HERE!
+for customer in customers:
+    greeting = create_greeting(customer["first_name"], customer["last_name"], customer["revenue"])
+    print(greeting)
