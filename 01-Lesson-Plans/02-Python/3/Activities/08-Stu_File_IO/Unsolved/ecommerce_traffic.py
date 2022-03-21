@@ -42,13 +42,13 @@ with open(filepath, 'r') as file:
 
 # @TODO: Print out customer_total and day_count
 
-print(f"customer_total: {customer_total}")
+print(f"customer_total: {customer_total:,}")
 print(f"day_count: {day_count}")
 print("-----------------------------------\n")
 
 # @TODO: Calculate the average
 daily_average = customer_total / day_count
-print(f"The daily average is:{daily_average}\n")
+print(f"The daily average is: {daily_average}\n")
 
 
 # @TODO: Set output file name
