@@ -4,7 +4,7 @@
 
 ### Based on the financial dataset in this file: 
 
->>>>***[budget_csv_data](../DC_Python_HomeWork/PyBank/Resources/budget_data.csv)***
+>>>>***[budget_csv_data](../Rutgers_Personal_Repo/02-Homework/02-Python/Instructions/PyBank/Resources)***
 
 ### I worked on and calculated all the tasks by running this code that can be found by clicking below:
 
