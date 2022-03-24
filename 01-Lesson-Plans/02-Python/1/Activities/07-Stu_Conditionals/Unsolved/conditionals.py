@@ -1,4 +1,9 @@
 # 1.
+from email.quoprimime import body_check
+
+from pkg_resources import WorkingSet
+
+
 x = 5
 y = 10
 if 2 * x > 10:
@@ -6,6 +11,15 @@ if 2 * x > 10:
 else:
     print("Oooo needs some work")
 
+x = 3
+y = 2
+
+if x * y > 7:
+    print("It is fucking Working")
+if x * y < 4:
+    print("go take a swim")
+else: 
+    print("this don't make sense")    
 # 2.
 x = 5
 y = 10
