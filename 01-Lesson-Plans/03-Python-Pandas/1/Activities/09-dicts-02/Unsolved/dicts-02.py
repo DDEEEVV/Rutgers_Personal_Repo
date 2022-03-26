@@ -1,8 +1,8 @@
 # Use the `from` keyword to import the `shows` dictionary from the `show_data.py` file
-
+from show_data import shows
 
 # QUESTION 1: Who is the actor that plays Squidward in Spongebob (kids)?
-
+print(shows["genre"]["kids"]["Spongebob"]["cast"][3]["actor"])
 
 # QUESTION 2: Patrick Warburton plays Joe Swanson in Family Guy (comedy). What is the link to his imdb page?
 

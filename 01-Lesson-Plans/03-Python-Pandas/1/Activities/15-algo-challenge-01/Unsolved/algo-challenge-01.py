@@ -1,13 +1,19 @@
 # Import the `random` library.
-
+import random
 # Answer each question with the correct coding solution.
 
 # QUESTION 1: Create a function called `number_guess` that takes in an integer as an argument.
 # If the number is 42, print(true). If it isn't 42, print(false)
-
+def number_guess(number):
+    if number > 42:
+        print(True)
+    else:
+        print(False)
 
 # This code is to help you test your function
-
+test_num = random.randint(40, 45)
+print(f"Number: {test_num}")
+number_guess(test_num)
 
 # QUESTION 2: Write a function that takes in a list of numbers. the function should print the smallest number in the given list
 
