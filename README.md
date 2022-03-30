@@ -3,4 +3,4 @@
 *March 30, 2022* It has been almost a month since when I started the course and I have learned a lot. I love everything about FinTech boot camp.
 It is a fast environment and I have to be very very focus, I am trying my best I hope this will lead me to a good job in Data Analysis. 
 
-Here is a picture of my work station [working/studying/entertaining from home](../Resources/home.JPG)
+Here is a picture of my work station [working/studying/entertaining from home](Resources/home.JPG)
