@@ -1,6 +1,6 @@
 # Unit 5 - Financial Planning
 
-![Financial Planner](Images/financial-planner.png)
+![Financial Planner](Instructions/Images/financial-planner.png)
 
 ## Background
 
@@ -18,9 +18,9 @@ The second tool will be a retirement planning tool that will use the Alpaca API 
 
 ### Files
 
-* [Personal Finance Planner starter code](Starter_Code/financial-planner.ipynb)
+* [Personal Finance Planner starter code](Instructions/Starter_Code/financial-planner.ipynb)
 
-* [MCForecastTools toolkit](Starter_Code/MCForecastTools.py)
+* [MCForecastTools toolkit](Instructions/Starter_Code/MCForecastTools.py)
 
 ---
 
@@ -93,7 +93,7 @@ In this section, you will assess the financial health of the credit union's memb
 
     **Hint:** The `df_savings` DataFrame should have one column named `amount` and two rows where `crypto` and `shares` are the index values:
 
-    ![df_savings](Images/df_savings.png)
+    ![df_savings](Instructions/Images/df_savings.png)
 
 3. Use the `df_savings` DataFrame to plot a pie chart to visualize the composition of personal savings.
 
@@ -121,9 +121,9 @@ Follow the steps outlined in the starter notebook to complete the following:
 
 3. Plot the simulation results and the probability distribution/confidence intervals.
 
-    ![monte carlo](Images/monte-carlo.png)
+    ![monte carlo](Instructions/Images/monte-carlo.png)
 
-    ![histogram](Images/histogram.png)
+    ![histogram](Instructions/Images/histogram.png)
 
 #### Retirement Analysis
 
