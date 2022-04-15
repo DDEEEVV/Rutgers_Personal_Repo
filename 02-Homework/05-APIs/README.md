@@ -1,213 +1,85 @@
-# Unit 5 - Financial Planning
+# Financial_Planning.hw
 
-![Financial Planner](Instructions/Images/financial-planner.png)
+## My work can be found by clicking here: [DAVIT_CUEDARI_Financial_Planner_HW](financial-planner.ipynb)
+
+![Financial Planner](MC_simulation_results/financial-planner.png)
+
+This homework consist in working with APIs and running several Monte Carlo simulations. The results will help to calculate the expected portfolio returns given a specific initial investment amount.
 
 ## Background
 
-You decided to start a FinTech consultancy firm, and you want to make a difference by working on projects with high social impact in local communities. You just won your first contract to help one of the biggest credit unions in your area. They want to create a tool that helps their members enhance their financial health. The Chief Technology Officer (CTO) of the credit union asked you to develop a prototype application to demo in the next credit union assembly.
+Using the skills that I have learned during this first month in the FinTech BootCamp, especially on APIs as part of technical solution I have created two financial analysis tools:
 
-The credit union board wants to allow the union's members to assess their monthly personal finances, and also be able to forecast a reasonably good retirement plan based on cryptocurrencies, stocks, and bonds.
+The first tool consists on building a personal financial planner that will allow users to have clear visualization of their savings that they have invested in: Stocks, Bonds and Cryptocurrencies and make sure that they have enough money as an emergency fund!
 
-In this homework activity, you will use all the skills you have learned until now - focusing on using APIs as part of the technical solution - to create two financial analysis tools.
+The second tool will be a retirement planning tool that will use the Alpaca API to fetch historical closing prices for a retirement portfolio composed of stocks and bonds, then run Monte Carlo simulations to project the portfolio performance at 30 years. 
 
-The first will be a personal finance planner that will allow users to visualize their savings composed by investments in shares and cryptocurrencies to assess if they have enough money as an emergency fund.
+I have used the Monte Carlo data to calculate the expected portfolio returns given a specific initial investment amount and the results will be different based on the initial investment, years of projection which will determine the minimum and the maximum outcome of that investment projection.
+__________________________________________________________________________________
+I really enjoyed working on this homework and I have learned a lot from it. Thanks to my amazing instructor and the Rutgers Institution for providing all the tools for me to learn!
+__________________________________________________________________________________
 
-The second tool will be a retirement planning tool that will use the Alpaca API to fetch historical closing prices for a retirement portfolio composed of stocks and bonds, then run Monte Carlo simulations to project the portfolio performance at 30 years. You will then use the Monte Carlo data to calculate the expected portfolio returns given a specific initial investment amount.
 
----
+Here is a time line of my work:
 
-### Files
+First I have to import libraries and dependencies, the ones that are new on this work are: *load_dotenv, alpaca_trade_api, json and MCSimulation*
 
-* [Personal Finance Planner starter code](Instructions/Starter_Code/financial-planner.ipynb)
+Using the url provided I am able to find the current price from the crypto market and by multiplying it by the amount I find the value of the crypto portfolio:
+![current crypto wallet balance](MC_simulation_results/value_of_1.2BTC_5.3ETH.png)
 
-* [MCForecastTools toolkit](Instructions/Starter_Code/MCForecastTools.py)
+Next I have to create two other variables for the current amount of shares for Bonds and Stocks:
+Using ALPACA API get_bars  I am able to extract data and use them to run my analysis:
 
----
+*Important note here: for my ALPACA_API_KEY I am not using the .env so I am not creating a gitignore file. I have used the zshrc file to store and hide my api keys in my local environment so they won't get exposed online.*
 
-### Resources
+Running all the code I am able to get the current price and the current value by multiplying amount with price:
 
-This homework will utilize two APIs:
 
-* The **Alpaca Markets API** will be used to pull historical stocks and bonds information.
+![AGG and SPY close prices](MC_simulation_results/closing_prices.png)
+![the current value of shares](MC_simulation_results/value_of_shares.png)
 
-* The **Alternative Free Crypto API** will be used to retrieve Bitcoin and Ethereum prices.
+# Saving Health Analysis
 
-The documentation for these APIs can be found via the following links:
+For a monthly income provided and crypto portfolio and stock/bonds portfolio we have to set an ideal emergency fund:
 
-* [Free Crypto API Documentation](https://alternative.me/crypto/api/)
+![savings pie chart](MC_simulation_results/piechart.png)
 
-* [AlpacaDOCS](https://alpaca.markets/docs/)
----
+The emergency fund has to be created based on the 3 times the monthly income,
+and the analysis consist on the total amount of savings that should not exceed the total amount saved in stocks, bonds and cryptos.
+Validating health through a conditional statements we get this result:
 
-## Instructions
+![validating saving health](MC_simulation_results/validating_saving_health.png)
 
-### Part 1 - Personal Finance Planner
+## *The second tool - Retirement Planning*
 
-In this section of the challenge, you will create a personal finance planner application. To develop the personal finance planner prototype, you should take into account the following assumptions:
+I started with setting up tickers and the start and the end dates of the historical data to be extracted with alpaca.get_bars and use it ti create a stock data frame.
+I used that data frame to run 500 Monte Carlo Simulations with weights: 40% in AGG and 60% in SPY for 30 years.
+The results using this fascinating tool are amazingly generated in 1 minute:
 
-* The average household income for each member of the credit union is $12,000.
+![simulation outcomes](MC_simulation_results/simulation_1.png)
+![probability distribution outcome](MC_simulation_results/distribution_1.png)
 
-* Every union member has a savings portfolio composed of cryptocurrencies, stocks and bonds:
+>### *There is a 95% chance that an initial investment of $20,000 in the portfolio over the next 30 years will end within in the range of $86,660.26 and $1,146,726.14*
 
-    * Assume the following amount of crypto assets: `1.2` BTC and `5.3` ETH.
 
-    * Assume the following amount of shares in stocks and bonds: `50` SPY (stocks) and `200` AGG (bonds).
+*Increasing the initial investment by 50%:*
+>### *There is a 95% chance that an initial investment of $30,000.0 in the portfolio over the next 30 years will end within in the range of $129,990.39 and $1,720,089.21*
 
-Use the starter Jupyter notebook to complete the following steps.
 
-#### Collect Crypto Prices Using the `requests` Library
 
-1. Create two variables called `my_btc` and `my_eth`. Set them equal to `1.2` and `5.3`, respectively.
 
-2. Use the `requests` library to fetch the current price in US dollars (`USD`) of bitcoin (`BTC`) and ethereum (`ETH`) using the **Alternative Free Crypto API** endpoints provided in the starter notebook.
 
-3. Parse the API JSON response to select only the crypto prices and store each price in a variable.
+### Five Years Retirement Option
 
-    **Hint:** Be aware of the particular identifier for each cryptocurrency in the API JSON response - the bitcoin identifier is `1` whereas ethereum is `1027`.
+![simulation outcomes](MC_simulation_results/early_retirement_5years_simulation.png)
+![probability distribution outcome](MC_simulation_results/early_retirement_5years_distribution.png)
 
-4. Compute the portfolio value of cryptocurrencies and print the results.
+>### *There is a 95% chance that an initial investment of $60,000 in the portfolio over the next 5 years will end within in the range of $54,643.5 and $144,425.04*
 
-#### Collect Investments Data Using Alpaca: `SPY` (stocks) and `AGG` (bonds)
 
-**Important:** Remember to create a `.env` file in your working directory to store the values of your Alpaca API key and Alpaca secret key.
+### Ten Years Retirement Option
 
-1. Create two variables named `my_agg` and `my_spy` and set them equal to `200` and `50`, respectively.
+![simulation outcomes](MC_simulation_results/early_retirement_10years_simulation.png)
+![probability distribution outcome](MC_simulation_results/early_retirement_10years_distribution.png)
 
-2. Set the Alpaca API key and secret key variables, then create the Alpaca API object using the `tradeapi.REST` function from the Alpaca SDK.
-
-3. Format the current date as ISO format. You may change the date set in the starter code to the current date.
-
-4. Get the current closing prices for `SPY` and `AGG` using Alpaca's `get_bars()` function. Transform the function's response to a Pandas DataFrame and preview the data.
-
-5. Pick the `SPY` and `AGG` close prices from the Alpaca's `get_bars()` DataFrame response and store them as Python variables. Print the closing values for validation.
-
-6. Compute the value in dollars of the current amount of shares and print the results.
-
-#### Savings Health Analysis
-
-In this section, you will assess the financial health of the credit union's members.
-
-1. Create a variable called `monthly_income` and set its value to `12000`.
-
-2. To analyze savings health, create a DataFrame called `df_savings` with two rows. Store the total value in dollars of the crypto assets in the first row and the total value of the shares in the second row.
-
-    **Hint:** The `df_savings` DataFrame should have one column named `amount` and two rows where `crypto` and `shares` are the index values:
-
-    ![df_savings](Instructions/Images/df_savings.png)
-
-3. Use the `df_savings` DataFrame to plot a pie chart to visualize the composition of personal savings.
-
-4. Use `if` conditional statements to validate if the current savings are enough for an emergency fund. An ideal emergency fund should be equal to three times your monthly income.
-
-    * If total savings are greater than the emergency fund, display a message congratulating the person for having enough money in this fund.
-
-    * If total savings are equal to the emergency fund, display a message congratulating the person on reaching this financial goal.
-
-    * If total savings are less than the emergency fund, display a message showing how many dollars away the person is from reaching the goal.
-
-### Part 2 - Retirement Planning
-
-In this section, you will use the Alpaca API to fetch historical closing prices for a retirement portfolio and then Use the MCForecastTools toolkit to create Monte Carlo simulations to project the portfolio performance at `30` years. You will then use the Monte Carlo data to answer questions about the portfolio.
-
-Follow the steps outlined in the starter notebook to complete the following:
-
-#### Monte Carlo Simulation
-
-1. Use the Alpaca API to fetch five years historical closing prices for a traditional `40/60` portfolio using the `SPY` and `AGG` tickers to represent the `60%` stocks (`SPY`) and `40%` bonds (`AGG`) composition of the portfolio. Make sure to convert the API output to a DataFrame and preview the output.
-
-    > *Note*: In Monte-Carlo Simulation, getting data as far back as possible matters, because if we simulate using only small amounts of data during a recent time when markets are booming, or instead falling precipitously, a Monte-Carlo Analysis will inadvertently extrapolate this temporary market movement too far into the future. Getting data over a longer time period mitigates this effect.
-
-2. Configure and execute a Monte Carlo Simulation of `500` runs and `30` years for the `40/60` portfolio.
-
-3. Plot the simulation results and the probability distribution/confidence intervals.
-
-    ![monte carlo](Instructions/Images/monte-carlo.png)
-
-    ![histogram](Instructions/Images/histogram.png)
-
-#### Retirement Analysis
-
-1. Fetch the summary statistics from the Monte Carlo simulation results.
-
-1. Given an initial investment of `$20,000`, calculate the expected portfolio return in dollars at the `95%` lower and upper confidence intervals.
-
-2. Calculate the expected portfolio return at the `95%` lower and upper confidence intervals based on a `50%` increase in the initial investment.
-
-### Optional Challenge - Early Retirement
-
-The CTO of the Credit Union was really impressed with your work on this planner, but commented that `30` years seems like such a long time to wait to retire! The CTO starts wondering if the retirement plan could be adjusted to account for an earlier than normal retirement.
-
-Try adjusting the portfolio to either include more risk (a higher stock than bond ratio) or to have a larger initial investment and rerun the retirement analysis to see what it would take to retire in `5` or `10` years instead of `30`!
-
----
-
-### Hints and Considerations
-
-* To allow for quicker work during the Monte Carlo simulation, start out by running `100` simulations for one year of returns, and when you have the code worked out, run the full `500` simulations for `30` years.
-
-* Remember to add the `.env` files to the `.gitignore` configuration to avoid exposing your API keys in your GitHub repository.
-
-* A `.gitignore` file contains file names and extensions of files that you don't want pushed to your repository. For more information on how a `gitignore` works, you can read the documentation [here](https://docs.github.com/en/github/using-git/ignoring-files).
-
-### Submission
-
-1. Use the starter Jupyter Notebook for your Personal Finance Planner.
-
-2. Submit your notebook to a new GitHub repository and create a `README.md` file.
-
-3. Submit the link to your GitHub project to Bootcampspot for grading.
-
----
-
-### Requirements
-
-#### Personal Finance Planner  (35 points)
-
-##### To receive all points, your code must:
-
-* Collect crypto prices using the requests Library. (10 points)
-* Collect investments data using Alpaca: SPY (stocks) and AGG (bonds). (10 points)
-* Perform a savings health analysis. (15 points)
-
-
-#### Retirement Planning (35 points)
-
-##### To receive all points, your code must:
-
-* Complete a Monte Carlo Simulation with 500 runs. (15 points)
-* Plot the Monte Carlo simulation results. (5 points)
-* Plot the probability distribution and confidence intervals. (5 points)
-* Complete the retirement analysis. (10 points)
-
-#### Optional Bonus (10 points)
-
-##### To receive all bonus points, your code must:
-
-* Optional: Adjust the portfolio to reflect an early retirement and rerun the analysis to show either a higher stock than bond ratio, or to have a higher initial investment. (10 points)
-
-#### Coding Conventions and Formatting (10 points)
-
-##### To receive all points, your code must:
-
-* Place imports at the beginning of the file, just after any module comments and docstrings and before module globals and constants. (3 points)
-* Name functions and variables with lowercase characters and with words separated by underscores. (2 points)
-* Follow Don't Repeat Yourself (DRY) principles by creating maintainable and reusable code. (3 points)
-* Use concise logic and creative engineering where possible. (2 points)
-
-#### Deployment and Submission (10 points)
-
-##### To receive all points, you must:
-
-* Submit a link to a GitHub repository that’s cloned to your local machine and contains your files. (5 points)
-* Include appropriate commit messages in your files. (5 points)
-
-#### Code Comments (10 points)
-
-##### To receive all points, your code must:
-
-* Be well commented with concise, relevant notes that other developers can understand. (10 points)
-
-
----
-
-© 2022 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+>### *There is a 95% chance that an initial investment of $60,000 in the portfolio over the next 10 years will end within in the range of $72,877.37 and $311,493.28*
